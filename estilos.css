@@ -1,0 +1,441 @@
+/* Estilos Generales */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 0.5em;
+    color: #388e3c; /* Green color from the image */
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Encabezado */
+header {
+    background-color: #fff; /* White header */
+    color: #333;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+header .logo {
+    max-height: 60px;
+    margin-right: 1rem;
+}
+
+/* Sección de Inicio (con la clase .inicio-seccion) */
+.inicio-seccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f0fbe6;
+    border-radius: 10px;
+    margin: 1rem auto;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inicio-imagen {
+    flex: 1;
+    text-align: center;
+    margin-right: 1rem;
+}
+
+.inicio-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.inicio-contenido {
+    flex: 1;
+    padding: 1rem;
+}
+
+.inicio-contenido h1 {
+    font-size: 2.5rem;
+    color: #2e7d32;
+    margin-bottom: 0.75rem;
+}
+
+.inicio-contenido p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.inicio-botones-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.boton-index {
+    display: inline-block;
+    background-color: #388e3c;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.boton-index:hover {
+    background-color: #1b5e20;
+}
+
+/* Sección de desechos plásticos (con la clase .nueva-seccion) */
+.nueva-seccion {
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 90%;
+    background-color: #f0fbe6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.desechos-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.desechos-intro h2 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 1rem;
+}
+
+.desechos-intro p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.desechos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.desecho-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.desecho-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.desecho-item h3 {
+    font-size: 1.2rem;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
+}
+
+.desecho-descripcion {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Sección de daños plásticos (modificada) */
+.danos-plasticos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.danos-plasticos h2 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 1rem;
+}
+
+.danos-lista {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.danos-lista li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.danos-lista li::before {
+    content: "•";
+    color: #2e7d32;
+    position: absolute;
+    left: 0;
+}
+
+.inicio-enlace {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.inicio-enlace a {
+    color: #2e7d32;
+    text-decoration: none;
+}
+
+.inicio-enlace a:hover {
+    text-decoration: underline;
+}
+
+.inicio-ilustracion {
+    max-width: 40%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de Eventos */
+#eventos {
+    background-color: #f0fbe6;
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.eventos-cabecera {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.eventos-cabecera img {
+    max-width: 200px;
+    margin-right: 2rem;
+}
+
+.eventos-texto h2 {
+    font-size: 2rem;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
+}
+
+.eventos-texto p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.flecha-abajo {
+    max-width: 50px;
+    margin-top: 1rem;
+}
+
+.eventos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.evento-tarjeta {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.evento-tarjeta img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.evento-detalles {
+    padding: 1rem;
+}
+
+.evento-detalles h3 {
+    font-size: 1.2rem;
+    color: #2e7d32;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.evento-fecha {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 0.75rem;
+}
+
+.evento-descripcion {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Sección de Alternativas */
+#alternativas {
+    background-color: #f0fbe6;
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#alternativas h2 {
+    font-size: 2rem;
+    color: #2e7d32;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.alternativas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.alternativa-tarjeta {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.alternativa-tarjeta img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px 10px 0 0;
+}
+
+.alternativa-tarjeta h3 {
+    font-size: 1.2rem;
+    color: #2e7d32;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.alternativa-descripcion {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f0fbe6;
+    color: #555;
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+/* Media Queries para Responsividad (General) */
+@media (max-width: 768px) {
+    #inicio {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .inicio-imagen {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .danos-plasticos {
+        flex-direction: column;
+    }
+
+    .danos-texto {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .inicio-ilustracion {
+        max-width: 80%;
+    }
+}
+
+/* Estilos específicos para "fomentar.html" (según la imagen) */
+
+#fomentar-introduccion {
+    background-color: #f0fbe6; /* Light green background */
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+#fomentar-introduccion h1 {
+    font-size: 2rem;
+    color: #388e3c; /* Green color */
+}
+
+#fomentar-actividades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 1.5rem; /* Consistent gap */
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.actividad-tarjeta {
+    background-color: #fff; /* White cards */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.actividad-tarjeta img {
+    width: 100%;
+    height: 300px; /* Consistent image height */
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px 10px 0 0;
+}
+
+.actividad-detalles {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space */
+    flex: 1; /* Allow details to grow and fill remaining space */
+}
+
+.actividad
