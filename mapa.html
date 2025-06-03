@@ -7,20 +7,25 @@
     <title>Mapa de Basureros - EcoEduca</title>
     <link rel="stylesheet" href="estilos.css">
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzxH+iPryyZsaX8Q0xgsyjsTne+A="
-        crossorigin=""/>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css' rel='stylesheet' />
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nEF3zZ/TLXp4NxAoJBhIIN+hmNHrzxH+iPryyZsaX8Q0xgsyjsTne+A="
-        crossorigin=""></script>
+    <style>
+        #mapa {
+            height: 500px;
+            width: 100%;
+            /* Puedes quitar estos estilos de depuración si los tienes del CSS anterior */
+            /* background-color: lightblue; */
+            /* border: 2px solid red; */
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="sources/logo.png" alt="EcoEduca Logo" class="logo">
+            <img src="sources/ecoeduca-logo.png" alt="EcoEduca Logo" class="logo">
         </div>
         <nav>
             <ul>
@@ -39,7 +44,8 @@
         <section id="mapa-basureros" class="mapa-seccion">
             <h2>Ubicación de Puntos de Recolección y Basureros</h2>
             <p>Encuentra los puntos más cercanos para desechar tus residuos de forma responsable.</p>
-            <div id="mapa"></div> </section>
+            <div id="mapa"></div>
+        </section>
     </main>
 
     <footer>
