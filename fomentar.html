@@ -14,7 +14,12 @@
         <div class="logo-container">
             <img src="sources/logo.png" alt="EcoEduca Logo" class="logo">
         </div>
-        <nav>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="eventos.html">Eventos</a></li>
@@ -23,8 +28,7 @@
                 <li><a href="mapa.html">Mapa de Basureros</a></li>
             </ul>
         </nav>
-        <a href="index.html" class="volver-inicio">Volver al inicio</a>
-    </header>
+        </header>
 
     <main class="main-content">
         <section id="fomentar-introduccion">
@@ -35,13 +39,37 @@
             <div class="actividad-tarjeta">
                 <img src="sources/puntos verdes.png" alt="Puntos Verdes">
                 <div class="actividad-detalles">
-                    <h2>Puntos Verdes</h2>
-                    <p>Crear estaciones de recolección de plásticos en lugares estratégicos del campus, donde los estudiantes puedan depositar sus residuos plásticos y aprender sobre el reciclaje adecuado.</p>
+                    <h2>Puntos Verdes de Recolección</h2>
+                    <p>Implementar y mantener puntos de recolección de plásticos claramente señalizados en todo el campus, facilitando que los estudiantes depositen sus residuos correctamente.</p>
                 </div>
             </div>
 
             <div class="actividad-tarjeta">
-                <img src="sources/taller de reutilizacion.jpeg" alt="Talleres de Reutilización">
+                <img src="sources/charlas y talleres.jpg" alt="Charlas y Talleres">
+                <div class="actividad-detalles">
+                    <h2>Charlas y Talleres Educativos</h2>
+                    <p>Organizar periódicamente charlas y talleres sobre la importancia del reciclaje de plásticos, cómo separar los residuos, y el impacto ambiental del plástico.</p>
+                </div>
+            </div>
+
+            <div class="actividad-tarjeta">
+                <img src="sources/recoleccion activa.jpeg" alt="Jornadas de Recolección Activa">
+                <div class="actividad-detalles">
+                    <h2>Jornadas de Recolección Activa</h2>
+                    <p>Realizar días de limpieza y recolección de plásticos en el campus y áreas cercanas, involucrando a la comunidad estudiantil y creando conciencia.</p>
+                </div>
+            </div>
+
+            <div class="actividad-tarjeta">
+                <img src="sources/campanas de sensibilizacion.jpg" alt="Campañas de Sensibilización">
+                <div class="actividad-detalles">
+                    <h2>Campañas de Sensibilización Digital</h2>
+                    <p>Utilizar redes sociales y plataformas digitales para difundir mensajes educativos sobre el reciclaje de plásticos, consejos para reducir el consumo y el impacto positivo de sus acciones.</p>
+                </div>
+            </div>
+
+            <div class="actividad-tarjeta">
+                <img src="sources/talleres de reutilizacion.jpg" alt="Talleres de Reutilización">
                 <div class="actividad-detalles">
                     <h2>Talleres de Reutilización</h2>
                     <p>Ofrecer talleres donde los estudiantes puedan aprender a reutilizar y transformar productos plásticos en nuevos objetos útiles, como decoración o herramientas de estudio.</p>
@@ -69,6 +97,25 @@
     <footer>
         <p>© 2024 EcoEduca</p>
     </footer>
+
+    <script>
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const mainNav = document.getElementById('main-nav');
+
+        if (hamburgerMenu && mainNav) {
+            hamburgerMenu.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!mainNav.contains(event.target) && !hamburgerMenu.contains(event.target) && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    hamburgerMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
 
 </body>
 
