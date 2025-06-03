@@ -675,8 +675,8 @@ footer {
     header nav ul {
         flex-direction: column; /* Apila los elementos de la lista verticalmente */
         width: 100%;
-        margin-top: 0;
-        gap: 0; /* Elimina el espacio horizontal entre los items */
+        margin-top: 0; /* CORREGIDO: Elimina el margen superior en móvil */
+        gap: 0; /* CORREGIDO: Elimina el espacio horizontal entre los items */
         padding: 1rem 0; /* Añade algo de padding dentro del menú */
     }
 
