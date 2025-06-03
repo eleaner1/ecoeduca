@@ -42,6 +42,64 @@ header .logo {
     margin-right: 1rem;
 }
 
+/* Estilos mejorados para los enlaces de navegación en el header */
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Alinea los botones verticalmente si tienen alturas variables */
+    gap: 1rem; /* Espacio entre los elementos del menú, puedes ajustarlo */
+}
+
+header nav ul li a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: white; /* Color del texto del botón (blanco para contrastar) */
+    background-color: #388e3c; /* Color de fondo verde principal de EcoEduca */
+    font-weight: bold;
+    padding: 0.8rem 1.6rem; /* Aumenta el relleno para dar forma de botón (ajusta según tu gusto) */
+    border-radius: 25px; /* Bordes redondeados para forma de píldora */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves para efectos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Sombra sutil para dar profundidad */
+    display: inline-block; /* Asegura que el padding y otras propiedades se apliquen correctamente */
+    margin: 0 0.25rem; /* Pequeño margen opcional entre botones si el 'gap' en 'ul' no es suficiente */
+}
+
+header nav ul li a:hover {
+    background-color: #2e7d32; /* Verde más oscuro al pasar el mouse */
+    color: white;
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+/* Estilo para el enlace de la página activa/actual (Opcional) */
+/* Para que funcione, necesitarás añadir la clase 'active' al enlace <a> de la página actual,
+   generalmente con JavaScript o desde el servidor. */
+header nav ul li a.active {
+    background-color: #1b5e20; /* Un verde aún más oscuro o un color distintivo */
+    color: #e8f5e9; /* Un blanco ligeramente teñido o blanco puro */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra interior para efecto presionado */
+    transform: translateY(0); /* Anula el efecto de elevación si está activo */
+}
+
+
+/* Estilo para el botón "Volver al inicio" en el header */
+.volver-inicio {
+    display: inline-block;
+    background-color: #388e3c;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.volver-inicio:hover {
+    background-color: #1b5e20;
+}
+
+
 /* Sección de Inicio (con la clase .inicio-seccion) */
 .inicio-seccion {
     display: flex;
@@ -366,7 +424,19 @@ footer {
 
 /* Media Queries para Responsividad (General) */
 @media (max-width: 768px) {
-    #inicio {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav ul {
+        flex-direction: column; /* Los botones se apilarán verticalmente */
+        gap: 0.75rem; /* Ajusta el espacio si se apilan */
+        margin-top: 1rem;
+    }
+    header .logo-container {
+        margin-bottom: 1rem;
+    }
+    .inicio-seccion {
         flex-direction: column;
         text-align: center;
     }
@@ -390,10 +460,10 @@ footer {
     }
 }
 
-/* Estilos específicos para "fomentar.html" (según la imagen) */
+/* Estilos específicos para "fomentar.html" */
 
 #fomentar-introduccion {
-    background-color: #f0fbe6; /* Light green background */
+    background-color: #f0fbe6;
     padding: 2rem;
     text-align: center;
     margin-bottom: 2rem;
@@ -402,29 +472,29 @@ footer {
 
 #fomentar-introduccion h1 {
     font-size: 2rem;
-    color: #388e3c; /* Green color */
+    color: #388e3c;
 }
 
 #fomentar-actividades {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
-    gap: 1.5rem; /* Consistent gap */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
     max-width: 90%;
     margin: 0 auto;
 }
 
 .actividad-tarjeta {
-    background-color: #fff; /* White cards */
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    display: flex; /* Flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
+    display: flex;
+    flex-direction: column;
 }
 
 .actividad-tarjeta img {
     width: 100%;
-    height: 300px; /* Consistent image height */
+    height: 300px;
     object-fit: cover;
     border-bottom: 1px solid #ddd;
     border-radius: 10px 10px 0 0;
@@ -434,8 +504,155 @@ footer {
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute space */
-    flex: 1; /* Allow details to grow and fill remaining space */
+    justify-content: space-between;
+    flex: 1;
 }
 
-.actividad
+.actividad-detalles h2 {
+    font-size: 1.2rem;
+    color: #388e3c;
+    margin-bottom: 0.5rem;
+}
+
+.actividad-detalles p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Estilos para el panel de Notificaciones */
+/* (Estos estilos son para la sección de Notificaciones que mencionaste,
+   si tienes una página de notificaciones, estos podrían ser útiles.
+   El archivo 'contacto.html' actualmente tiene un formulario de contacto.) */
+.notificaciones-seccion {
+    padding: 3rem 1rem;
+    margin: 2rem auto;
+    max-width: 90%;
+    background-color: #f0fbe6;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.notificaciones-seccion h2 {
+    font-size: 2.5rem;
+    color: #2e7d32;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.notificaciones-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.notificacion-tarjeta {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notificacion-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.notificacion-contenido {
+    padding: 1.5rem;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.notificacion-contenido h3 {
+    font-size: 1.4rem;
+    color: #388e3c;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.notificacion-fecha {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.notificacion-contenido p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Estilos para el botón "Cargar más" si lo usas */
+#cargar-mas-notificaciones {
+    margin-top: 3rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#cargar-mas-notificaciones:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+}
+
+/* Estilos para la sección del Mapa de Basureros */
+.mapa-seccion {
+    padding: 3rem 1rem;
+    margin: 2rem auto;
+    max-width: 90%;
+    background-color: #f0fbe6;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.mapa-seccion h2 {
+    font-size: 2.5rem;
+    color: #2e7d32;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.mapa-seccion p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+#mapa {
+    height: 500px; /* Altura del mapa: ¡MUY IMPORTANTE para que se vea! */
+    width: 100%; /* Ancho del mapa */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries para responsividad (adicionales para notificaciones y mapa) */
+@media (max-width: 768px) {
+    .notificaciones-seccion h2 {
+        font-size: 2rem;
+    }
+    .notificaciones-lista {
+        grid-template-columns: 1fr;
+    }
+    /* .notificacion-tarjeta img {  Ya no existe una imagen directa en la tarjeta de notificación, así que esta regla puede no ser necesaria o necesitar ajuste si se reintroduce una imagen.
+        height: 180px; 
+    } */
+    #mapa {
+        height: 350px;
+    }
+}
