@@ -12,11 +12,8 @@
 
     <style>
         #mapa {
-            height: 500px;
+            height: 550px; /* Ajustado para que coincida con el CSS */
             width: 100%;
-            /* Puedes quitar estos estilos de depuración si los tienes del CSS anterior */
-            /* background-color: lightblue; */
-            /* border: 2px solid red; */
         }
     </style>
 </head>
@@ -27,23 +24,27 @@
         <div class="logo-container">
             <img src="sources/logo.png" alt="EcoEduca Logo" class="logo">
         </div>
-        <nav>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="eventos.html">Eventos</a></li>
                 <li><a href="alternativas.html">Alternativas</a></li>
                 <li><a href="fomentar.html">Fomentar</a></li>
-                <li><a href="contacto.html">Notificaciones</a></li>
-                <li><a href="mapa.html">Mapa de Basureros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="mapa.html" class="active">Mapa de Basureros</a></li>
             </ul>
         </nav>
-        <a href="index.html" class="volver-inicio">Volver al inicio</a>
-    </header>
+        </header>
 
     <main class="main-content">
         <section id="mapa-basureros" class="mapa-seccion">
             <h2>Ubicación de Puntos de Recolección y Basureros</h2>
-            <p>Encuentra los puntos más cercanos para desechar tus residuos de forma responsable.</p>
+            <p>Encuentra los puntos más cercanos para desechar tus residuos plásticos de forma responsable. ¡Contribuye a un ambiente más limpio!</p>
             <div id="mapa"></div>
         </section>
     </main>
@@ -51,6 +52,25 @@
     <footer>
         <p>© 2024 EcoEduca</p>
     </footer>
+
+    <script>
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const mainNav = document.getElementById('main-nav');
+
+        if (hamburgerMenu && mainNav) {
+            hamburgerMenu.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!mainNav.contains(event.target) && !hamburgerMenu.contains(event.target) && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    hamburgerMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
 
     <script src="mapa.js"></script>
 
