@@ -14,7 +14,12 @@
         <div class="logo-container">
             <img src="sources/logo.png" alt="EcoEduca Logo" class="logo">
         </div>
-        <nav>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="eventos.html">Eventos</a></li>
@@ -23,8 +28,7 @@
                 <li><a href="mapa.html">Mapa de Basureros</a></li>
             </ul>
         </nav>
-        <a href="index.html" class="volver-inicio">Volver al inicio</a>
-    </header>
+        </header>
 
     <main class="main-content">
         <section id="alternativas" class="alternativas-seccion">
@@ -33,12 +37,22 @@
                 <div class="alternativa-tarjeta">
                     <img src="sources/plastico de almidon.png" alt="Bioplástico de Almidón de Maíz">
                     <h3>Bioplástico de Almidón de Maíz</h3>
-                    <p class="alternativa-descripcion">Un material biodegradable hecho de almidón de maíz, ideal para utensilios y empaques.</p>
+                    <p class="alternativa-descripcion">Una alternativa biodegradable y compostable para envases y utensilios, reduciendo la dependencia del plástico convencional.</p>
                 </div>
                 <div class="alternativa-tarjeta">
-                    <img src="sources/vasos de bambu.jpg" alt="Bambú">
-                    <h3>Bambú</h3>
-                    <p class="alternativa-descripcion">Material natural y sostenible, perfecto para utensilios de cocina, muebles y utensilios.</p>
+                    <img src="sources/baso de bambu.png" alt="Vasos de Bambú">
+                    <h3>Vasos de Bambú</h3>
+                    <p class="alternativa-descripcion">Vasos reutilizables y biodegradables, una opción sostenible para bebidas calientes y frías.</p>
+                </div>
+                <div class="alternativa-tarjeta">
+                    <img src="sources/bolsa de tela.jpg" alt="Bolsas de Tela Reutilizables">
+                    <h3>Bolsas de Tela Reutilizables</h3>
+                    <p class="alternativa-descripcion">Duraderas y lavables, ideales para compras y transporte, reemplazando las bolsas de plástico de un solo uso.</p>
+                </div>
+                <div class="alternativa-tarjeta">
+                    <img src="sources/botella de agua de acero inoxidable.jpg" alt="Botellas de Agua de Acero Inoxidable">
+                    <h3>Botellas de Agua de Acero Inoxidable</h3>
+                    <p class="alternativa-descripcion">Opción resistente y duradera para hidratarse, eliminando la necesidad de botellas de plástico desechables.</p>
                 </div>
                 <div class="alternativa-tarjeta">
                     <img src="sources/vasos de vidrio.jpg" alt="Vidrio Reutilizable">
@@ -67,6 +81,25 @@
     <footer>
         <p>© 2024 EcoEduca</p>
     </footer>
+
+    <script>
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const mainNav = document.getElementById('main-nav');
+
+        if (hamburgerMenu && mainNav) {
+            hamburgerMenu.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!mainNav.contains(event.target) && !hamburgerMenu.contains(event.target) && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    hamburgerMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
 
 </body>
 
