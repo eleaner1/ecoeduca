@@ -22,14 +22,13 @@
         <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="eventos.html">Eventos</a></li>
-                <li><a href="alternativas.html">Alternativas</a></li>
+                <li><a href="eventos.html">Eventos</a></li> <li><a href="alternativas.html">Alternativas</a></li>
                 <li><a href="fomentar.html">Fomentar</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="mapa.html">Mapa de Basureros</a></li>
             </ul>
         </nav>
-        </header>
-
+    </header>
     <main class="main-content">
         <section id="eventos" class="eventos-seccion">
             <div class="eventos-cabecera">
@@ -40,8 +39,25 @@
                 </div>
             </div>
 
+            <div class="eventos-grid">
                 <div class="evento-tarjeta">
-                    <img src="sources/cine ecologico.jpg" alt="Cine Ecológico">
+                    <img src="sources/conferencia de cambio climatico.jpg" alt="Conferencia Cambio Climático">
+                    <div class="evento-detalles">
+                        <h3>Conferencia Cambio Climático</h3>
+                        <p class="evento-fecha">5/10/2024</p>
+                        <p class="evento-descripcion">Expertos debaten sobre el impacto del plástico y estrategias de mitigación.</p>
+                    </div>
+                </div>
+                <div class="evento-tarjeta">
+                    <img src="sources/jornada de limpieza.jpg" alt="Jornada de Limpieza">
+                    <div class="evento-detalles">
+                        <h3>Jornada de Limpieza</h3>
+                        <p class="evento-fecha">28/9/2024</p>
+                        <p class="evento-descripcion">Únete a nosotros para limpiar las áreas verdes del campus y sus alrededores, enfocándonos en la recolección de plásticos.</p>
+                    </div>
+                </div>
+                <div class="evento-tarjeta">
+                    <img src="sources/cine ecologico.jpeg" alt="Cine Ecológico">
                     <div class="evento-detalles">
                         <h3>Cine Ecológico</h3>
                         <p class="evento-fecha">22/9/2024</p>
@@ -56,22 +72,16 @@
                         <p class="evento-descripcion">Feria con stands informativos, productos ecológicos y charlas sobre la reducción del uso de plásticos.</p>
                     </div>
                 </div>
-                <div class="evento-tarjeta">
-                    <img src="sources/cero desechos.jpg" alt="Día del Plástico Cero">
-                    <div class="evento-detalles">
-                        <h3>Día del Plástico Cero</h3>
-                        <p class="evento-fecha">9/9/2024</p>
-                        <p class="evento-descripcion">Un día entero sin plásticos en el campus, con actividades y premios para los participantes.</p>
-                    </div>
                 </div>
-            </div>
         </section>
     </main>
+
     <footer>
         <p>© 2024 EcoEduca</p>
     </footer>
 
     <script>
+        // Script para el funcionamiento del menú de hamburguesa
         const hamburgerMenu = document.getElementById('hamburger-menu');
         const mainNav = document.getElementById('main-nav');
 
@@ -81,15 +91,31 @@
                 hamburgerMenu.classList.toggle('active');
             });
 
+            // Cerrar el menú si se hace clic fuera de él (solo para móviles)
             document.addEventListener('click', (event) => {
+                // Si el clic no fue dentro del menú ni en el botón de hamburguesa, y el menú está activo
                 if (!mainNav.contains(event.target) && !hamburgerMenu.contains(event.target) && mainNav.classList.contains('active')) {
                     mainNav.classList.remove('active');
                     hamburgerMenu.classList.remove('active');
                 }
             });
         }
-    </script>
 
-</body>
+        // Script para añadir la clase 'active' a la página actual en la navegación
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtiene la última parte de la URL (el nombre del archivo, ej. "eventos.html")
+            const currentPath = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('#main-nav ul li a');
+
+            navLinks.forEach(link => {
+                const linkPath = link.getAttribute('href').split('/').pop();
+                // Si el nombre del archivo del enlace coincide con el de la página actual
+                if (currentPath === linkPath) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+    </body>
 
 </html>
