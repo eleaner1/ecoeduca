@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Basureros - EcoEduca</title>
+    <link rel="stylesheet" href="estilos.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzxH+iPryyZsaX8Q0xgsyjsTne+A="
+        crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nEF3zZ/TLXp4NxAoJBhIIN+hmNHrzxH+iPryyZsaX8Q0xgsyjsTne+A="
+        crossorigin=""></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="sources/ecoeduca-logo.png" alt="EcoEduca Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="alternativas.html">Alternativas</a></li>
+                <li><a href="fomentar.html">Fomentar</a></li>
+                <li><a href="contacto.html">Notificaciones</a></li>
+                <li><a href="mapa.html">Mapa de Basureros</a></li>
+            </ul>
+        </nav>
+        <a href="index.html" class="volver-inicio">Volver al inicio</a>
+    </header>
+
+    <main class="main-content">
+        <section id="mapa-basureros" class="mapa-seccion">
+            <h2>Ubicación de Puntos de Recolección y Basureros</h2>
+            <p>Encuentra los puntos más cercanos para desechar tus residuos de forma responsable.</p>
+            <div id="mapa"></div> </section>
+    </main>
+
+    <footer>
+        <p>© 2024 EcoEduca</p>
+    </footer>
+
+    <script src="mapa.js"></script>
+
+</body>
+
+</html>
