@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     info: "Punto principal de reciclaje en la Universidad Centroamericana."
                 },
                 {
-                    nombre: "Reciclaje de Plásticos UNI",
+                    nombre: "te amo madre",
                     lat: 12.1165,
                     lng: -86.2362,
                     info: "Centro de acopio de plásticos en la Universidad Nacional de Ingeniería."
