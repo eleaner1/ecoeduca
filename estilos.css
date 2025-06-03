@@ -656,3 +656,27 @@ footer {
         height: 350px;
     }
 }
+/* SOLUCIÓN DE DEBUGGING PARA EL MAPA - BORRAR SI EL MAPA APARECE */
+#mapa {
+    position: relative !important; /* Asegura que no sea estático si hay algún conflicto */
+    width: 100% !important; /* Asegura que ocupe el ancho disponible */
+    height: 500px !important; /* Asegura la altura, ya la tienes pero con !important */
+    background-color: lightblue !important; /* Fondo para ver el contenedor */
+    border: 2px solid red !important; /* Borde para ver los límites */
+    z-index: 9999 !important; /* Asegura que esté encima de todo */
+    opacity: 1 !important; /* Asegura que sea visible */
+    visibility: visible !important; /* Asegura que sea visible */
+    display: block !important; /* Asegura que no esté oculto por display: none */
+}
+
+/* También aplica reglas a los contenedores padres */
+.mapa-seccion,
+.main-content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 1 !important; /* Pueden tener un z-index menor que el mapa si el mapa tiene 9999 */
+    overflow: visible !important; /* Permite que el contenido se desborde si es necesario */
+    height: auto !important; /* Permite que la altura se ajuste al contenido */
+    min-height: 550px !important; /* Asegura una altura mínima para el contenedor de la sección */
+}
