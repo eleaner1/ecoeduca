@@ -48,556 +48,442 @@ header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center; /* Alinea los botones verticalmente si tienen alturas variables */
-    gap: 1rem; /* Espacio entre los elementos del menú, puedes ajustarlo */
+}
+
+header nav ul li {
+    margin: 0 15px; /* Espacio entre los elementos del menú */
 }
 
 header nav ul li a {
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    color: white; /* Color del texto del botón (blanco para contrastar) */
-    background-color: #388e3c; /* Color de fondo verde principal de EcoEduca */
-    font-weight: bold;
-    padding: 0.8rem 1.6rem; /* Aumenta el relleno para dar forma de botón (ajusta según tu gusto) */
-    border-radius: 25px; /* Bordes redondeados para forma de píldora */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves para efectos */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Sombra sutil para dar profundidad */
-    display: inline-block; /* Asegura que el padding y otras propiedades se apliquen correctamente */
-    margin: 0 0.25rem; /* Pequeño margen opcional entre botones si el 'gap' en 'ul' no es suficiente */
-}
-
-header nav ul li a:hover {
-    background-color: #2e7d32; /* Verde más oscuro al pasar el mouse */
-    color: white;
-    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
-}
-
-/* Estilo para el enlace de la página activa/actual (Opcional) */
-/* Para que funcione, necesitarás añadir la clase 'active' al enlace <a> de la página actual,
-   generalmente con JavaScript o desde el servidor. */
-header nav ul li a.active {
-    background-color: #1b5e20; /* Un verde aún más oscuro o un color distintivo */
-    color: #e8f5e9; /* Un blanco ligeramente teñido o blanco puro */
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra interior para efecto presionado */
-    transform: translateY(0); /* Anula el efecto de elevación si está activo */
-}
-
-
-/* Estilo para el botón "Volver al inicio" en el header */
-.volver-inicio {
-    display: inline-block;
-    background-color: #388e3c;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+    color: #333;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #fff;
+    background-color: #4CAF50; /* Un verde que contrasta bien */
+}
+
+.volver-inicio {
+    background-color: #4CAF50; /* Color verde */
+    color: white; /* Texto blanco */
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .volver-inicio:hover {
-    background-color: #1b5e20;
+    background-color: #388e3c; /* Verde más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Estilos Generales para el contenido principal */
+main {
+    padding: 20px;
+    min-height: 80vh; /* Asegura que main tenga al menos el 80% de la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 
-/* Sección de Inicio (con la clase .inicio-seccion) */
+/* Estilos para la sección de inicio */
 .inicio-seccion {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
     align-items: center;
-    padding: 2rem;
-    background-color: #f0fbe6;
+    justify-content: center; /* Centra los elementos */
+    padding: 3rem 1rem;
+    margin: 2rem auto;
+    max-width: 1200px; /* Ancho máximo para la sección */
+    background-color: #fff;
     border-radius: 10px;
-    margin: 1rem auto;
-    max-width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centra el texto dentro de la sección */
 }
 
 .inicio-imagen {
-    flex: 1;
-    text-align: center;
-    margin-right: 1rem;
-}
-
-.inicio-imagen img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Ocupa espacio flexible */
+    min-width: 300px; /* Mínimo ancho antes de envolver */
+    max-width: 50%;
+    margin-right: 2rem;
 }
 
 .inicio-contenido {
     flex: 1;
-    padding: 1rem;
+    min-width: 300px;
+    max-width: 50%;
+    text-align: left;
 }
 
 .inicio-contenido h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: #2e7d32;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .inicio-contenido p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #555;
     margin-bottom: 1.5rem;
 }
 
 .inicio-botones-index {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 0.5rem;
+    gap: 15px; /* Espacio entre los botones */
+    margin-top: 2rem;
+    justify-content: flex-start; /* Alinea los botones a la izquierda */
 }
 
 .boton-index {
     display: inline-block;
-    background-color: #388e3c;
+    background-color: #4CAF50;
     color: white;
-    padding: 0.75rem 1.25rem;
-    border: none;
-    border-radius: 20px;
-    margin-bottom: 0.5rem;
+    padding: 15px 25px;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .boton-index:hover {
-    background-color: #1b5e20;
+    background-color: #388e3c;
+    transform: translateY(-3px);
 }
 
-/* Sección de desechos plásticos (con la clase .nueva-seccion) */
-.nueva-seccion {
-    padding: 2rem;
+.problematica-seccion {
+    padding: 3rem 1rem;
     margin: 2rem auto;
-    max-width: 90%;
-    background-color: #f0fbe6;
+    max-width: 1200px;
+    background-color: #fce4ec; /* Light pink background */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.desechos-intro {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.desechos-intro h2 {
-    font-size: 1.8rem;
-    color: #2e7d32;
-    margin-bottom: 1rem;
-}
-
-.desechos-intro p {
-    font-size: 1.1rem;
-    color: #555;
-}
-
-.desechos-lista {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 2rem;
 }
 
-.desecho-item {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-}
-
-.desecho-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.desecho-item h3 {
-    font-size: 1.2rem;
-    color: #2e7d32;
-    margin-bottom: 0.5rem;
-}
-
-.desecho-descripcion {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* Sección de daños plásticos (modificada) */
-.danos-plasticos {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 2rem;
-}
-
-.danos-plasticos h2 {
-    font-size: 1.8rem;
-    color: #2e7d32;
-    margin-bottom: 1rem;
-}
-
-.danos-lista {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.danos-lista li {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 0.75rem;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.danos-lista li::before {
-    content: "•";
-    color: #2e7d32;
-    position: absolute;
-    left: 0;
-}
-
-.inicio-enlace {
+.problematica-seccion h2 {
+    width: 100%;
     text-align: center;
-    margin-top: 2rem;
-}
-
-.inicio-enlace a {
-    color: #2e7d32;
-    text-decoration: none;
-}
-
-.inicio-enlace a:hover {
-    text-decoration: underline;
-}
-
-.inicio-ilustracion {
-    max-width: 40%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Sección de Eventos */
-#eventos {
-    background-color: #f0fbe6;
-    padding: 2rem;
-    margin: 1rem auto;
-    max-width: 90%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.eventos-cabecera {
-    display: flex;
-    align-items: center;
+    font-size: 2.8rem;
+    color: #c2185b; /* Deep pink */
     margin-bottom: 2rem;
 }
 
-.eventos-cabecera img {
-    max-width: 200px;
-    margin-right: 2rem;
+.problematica-texto {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    text-align: left;
 }
 
-.eventos-texto h2 {
-    font-size: 2rem;
-    color: #2e7d32;
-    margin-bottom: 0.5rem;
+.problematica-texto ul {
+    list-style: none;
+    padding: 0;
 }
 
-.eventos-texto p {
-    font-size: 1.1rem;
-    color: #555;
+.problematica-texto ul li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23c2185b" width="24px" height="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>') no-repeat left center;
+    background-size: 20px;
+    padding-left: 30px;
     margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #444;
 }
 
-.flecha-abajo {
-    max-width: 50px;
-    margin-top: 1rem;
-}
-
-.eventos-lista {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.evento-tarjeta {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.evento-tarjeta img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-bottom: 1px solid #ddd;
-}
-
-.evento-detalles {
-    padding: 1rem;
-}
-
-.evento-detalles h3 {
-    font-size: 1.2rem;
-    color: #2e7d32;
-    margin-top: 0.75rem;
-    margin-bottom: 0.5rem;
-}
-
-.evento-fecha {
-    font-size: 0.8rem;
-    color: #777;
-    margin-bottom: 0.75rem;
-}
-
-.evento-descripcion {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* Sección de Alternativas */
-#alternativas {
-    background-color: #f0fbe6;
-    padding: 2rem;
-    margin: 1rem auto;
-    max-width: 90%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#alternativas h2 {
-    font-size: 2rem;
-    color: #2e7d32;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.alternativas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.alternativa-tarjeta {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-}
-
-.alternativa-tarjeta img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-bottom: 1px solid #ddd;
-    border-radius: 10px 10px 0 0;
-}
-
-.alternativa-tarjeta h3 {
-    font-size: 1.2rem;
-    color: #2e7d32;
-    margin-top: 0.75rem;
-    margin-bottom: 0.5rem;
-}
-
-.alternativa-descripcion {
-    font-size: 0.9rem;
-    color: #555;
+.inicio-ilustracion {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    height: auto;
 }
 
 /* Pie de página */
 footer {
+    background-color: #333;
+    color: white;
     text-align: center;
     padding: 1rem;
-    background-color: #f0fbe6;
-    color: #555;
-    margin-top: 2rem;
-    border-top: 1px solid #ddd;
-}
-
-/* Media Queries para Responsividad (General) */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-    header nav ul {
-        flex-direction: column; /* Los botones se apilarán verticalmente */
-        gap: 0.75rem; /* Ajusta el espacio si se apilan */
-        margin-top: 1rem;
-    }
-    header .logo-container {
-        margin-bottom: 1rem;
-    }
-    .inicio-seccion {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .inicio-imagen {
-        margin-right: 0;
-        margin-bottom: 1rem;
-    }
-
-    .danos-plasticos {
-        flex-direction: column;
-    }
-
-    .danos-texto {
-        margin-right: 0;
-        margin-bottom: 1rem;
-    }
-
-    .inicio-ilustracion {
-        max-width: 80%;
-    }
-}
-
-/* Estilos específicos para "fomentar.html" */
-
-#fomentar-introduccion {
-    background-color: #f0fbe6;
-    padding: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    border-radius: 10px;
-}
-
-#fomentar-introduccion h1 {
-    font-size: 2rem;
-    color: #388e3c;
-}
-
-#fomentar-actividades {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    max-width: 90%;
-    margin: 0 auto;
-}
-
-.actividad-tarjeta {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.actividad-tarjeta img {
+    position: relative;
+    bottom: 0;
     width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-bottom: 1px solid #ddd;
-    border-radius: 10px 10px 0 0;
 }
 
-.actividad-detalles {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
-}
-
-.actividad-detalles h2 {
-    font-size: 1.2rem;
-    color: #388e3c;
-    margin-bottom: 0.5rem;
-}
-
-.actividad-detalles p {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* Estilos para el panel de Notificaciones */
-/* (Estos estilos son para la sección de Notificaciones que mencionaste,
-   si tienes una página de notificaciones, estos podrían ser útiles.
-   El archivo 'contacto.html' actualmente tiene un formulario de contacto.) */
-.notificaciones-seccion {
+/* Estilos de la página de eventos */
+.eventos-seccion {
     padding: 3rem 1rem;
     margin: 2rem auto;
-    max-width: 90%;
-    background-color: #f0fbe6;
+    max-width: 1200px;
+    background-color: #e8f5e9; /* Light green background */
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.notificaciones-seccion h2 {
-    font-size: 2.5rem;
-    color: #2e7d32;
+.eventos-cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-.notificaciones-lista {
+.eventos-cabecera img {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.eventos-cabecera h2 {
+    font-size: 2.5rem;
+    color: #1b5e20; /* Darker green */
+    margin-bottom: 1rem;
+}
+
+.eventos-cabecera p {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.eventos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     justify-content: center;
+    margin-top: 2rem;
 }
 
-.notificacion-tarjeta {
+.evento-tarjeta {
     background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.notificacion-tarjeta:hover {
+.evento-tarjeta:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-.notificacion-contenido {
+.evento-tarjeta img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.evento-detalles {
     padding: 1.5rem;
     text-align: left;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
-.notificacion-contenido h3 {
-    font-size: 1.4rem;
-    color: #388e3c;
-    margin-bottom: 0.75rem;
-    line-height: 1.3;
+.evento-detalles h3 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
 }
 
-.notificacion-fecha {
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 1rem;
+.evento-detalles .evento-fecha {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.8rem;
     font-weight: bold;
 }
 
-.notificacion-contenido p {
+.evento-detalles .evento-descripcion {
     font-size: 1rem;
     color: #555;
-    margin-bottom: 1rem;
-    line-height: 1.5;
 }
 
-/* Estilos para el botón "Cargar más" si lo usas */
-#cargar-mas-notificaciones {
-    margin-top: 3rem;
-    padding: 0.8rem 2rem;
+/* Estilos de la página de alternativas */
+.alternativas-seccion {
+    padding: 3rem 1rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    background-color: #ffe0b2; /* Light orange background */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.alternativas-seccion h2 {
+    font-size: 2.5rem;
+    color: #e65100; /* Dark orange */
+    margin-bottom: 2rem;
+}
+
+.alternativas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.alternativa-tarjeta {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.alternativa-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.alternativa-tarjeta img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.alternativa-tarjeta h3 {
+    font-size: 1.6rem;
+    color: #f57c00; /* Orange */
+    margin: 1rem 0 0.5rem;
+}
+
+.alternativa-tarjeta .alternativa-descripcion {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0 1rem 1rem;
+}
+
+/* Estilos para la sección de Fomentar */
+#fomentar-introduccion {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+#fomentar-introduccion h1 {
+    font-size: 3rem;
+    color: #388e3c;
+    margin-bottom: 1rem;
+}
+
+#fomentar-actividades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fffde7; /* Light yellow background */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.actividad-tarjeta {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.actividad-tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.actividad-tarjeta img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.actividad-detalles {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.actividad-detalles h2 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
+}
+
+.actividad-detalles p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/* Estilos para la sección de Contacto */
+.contacto-seccion {
+    padding: 3rem 1rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    background-color: #e0f2f7; /* Light blue background */
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contacto-seccion h2 {
+    font-size: 2.5rem;
+    color: #0277bd; /* Dark blue */
+    margin-bottom: 2rem;
+}
+
+.contacto-seccion form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contacto-seccion input[type="text"],
+.contacto-seccion input[type="email"],
+.contacto-seccion textarea {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contacto-seccion textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 120px;
+}
+
+.contacto-seccion button[type="submit"] {
+    background-color: #0288d1; /* Blue */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 1.1rem;
-    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contacto-seccion button[type="submit"]:hover {
+    background-color: #01579b; /* Darker blue */
+    transform: translateY(-2px);
+}
+
+#cargar-mas-notificaciones {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -619,6 +505,11 @@ footer {
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
+    min-height: 600px; /* Asegura que la sección del mapa tenga una altura mínima */
+    display: flex; /* Añadir display flex para centrar mejor el contenido interno */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .mapa-seccion h2 {
@@ -635,48 +526,16 @@ footer {
 }
 
 #mapa {
-    height: 500px; /* Altura del mapa: ¡MUY IMPORTANTE para que se vea! */
-    width: 100%; /* Ancho del mapa */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+    height: 500px; /* Crucial para que el mapa tenga un tamaño visible */
+    width: 100%;
+    /* !!! MUY IMPORTANTE: ELIMINA ESTAS LÍNEAS DE DEPURACIÓN !!! */
+    /* background-color: lightblue !important; */
+    /* border: 2px solid red !important; */
 
-/* Media Queries para responsividad (adicionales para notificaciones y mapa) */
-@media (max-width: 768px) {
-    .notificaciones-seccion h2 {
-        font-size: 2rem;
-    }
-    .notificaciones-lista {
-        grid-template-columns: 1fr;
-    }
-    /* .notificacion-tarjeta img {  Ya no existe una imagen directa en la tarjeta de notificación, así que esta regla puede no ser necesaria o necesitar ajuste si se reintroduce una imagen.
-        height: 180px; 
-    } */
-    #mapa {
-        height: 350px;
-    }
-}
-/* SOLUCIÓN DE DEBUGGING PARA EL MAPA - BORRAR SI EL MAPA APARECE */
-#mapa {
-    position: relative !important; /* Asegura que no sea estático si hay algún conflicto */
-    width: 100% !important; /* Asegura que ocupe el ancho disponible */
-    height: 500px !important; /* Asegura la altura, ya la tienes pero con !important */
-    background-color: lightblue !important; /* Fondo para ver el contenedor */
-    border: 2px solid red !important; /* Borde para ver los límites */
-    z-index: 9999 !important; /* Asegura que esté encima de todo */
-    opacity: 1 !important; /* Asegura que sea visible */
-    visibility: visible !important; /* Asegura que sea visible */
-    display: block !important; /* Asegura que no esté oculto por display: none */
-}
-
-/* También aplica reglas a los contenedores padres */
-.mapa-seccion,
-.main-content {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 1 !important; /* Pueden tener un z-index menor que el mapa si el mapa tiene 9999 */
-    overflow: visible !important; /* Permite que el contenido se desborde si es necesario */
-    height: auto !important; /* Permite que la altura se ajuste al contenido */
-    min-height: 550px !important; /* Asegura una altura mínima para el contenedor de la sección */
+    /* Estas propiedades son opcionales y pueden dejarse si no causan problemas */
+    /* position: relative; */
+    /* z-index: 9999; */
+    /* opacity: 1; */
+    /* visibility: visible; */
+    /* display: block; */
 }
