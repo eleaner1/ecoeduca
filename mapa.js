@@ -12,20 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const longitudCentro = -86.2514;
         const zoomInicial = 13;
 
-        // Inicializar el mapa
         const map = new mapboxgl.Map({
             container: 'mapa', // ID del div del mapa
-            style: 'mapbox://styles/mapbox/streets-v12', // Estilo de mapa (puedes cambiarlo)
+            style: 'mapbox://styles/mapbox/streets-v12', // Estilo de mapa 
             center: [longitudCentro, latitudCentro], // [longitud, latitud] en Mapbox
             zoom: zoomInicial // Zoom inicial
         });
         console.log("Mapa instanciado con Mapbox GL JS.");
 
-        // Evento cuando el mapa termina de cargar
         map.on('load', function() {
             console.log("Mapa Mapbox GL JS cargado completamente.");
 
-            // Añadir un marcador de prueba simple
             new mapboxgl.Marker()
                 .setLngLat([longitudCentro, latitudCentro])
                 .setPopup(new mapboxgl.Popup().setHTML('<b>¡El mapa funciona!</b><br>Ubicación de prueba.')) // add popup
