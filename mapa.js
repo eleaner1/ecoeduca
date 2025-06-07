@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("DOM cargado. Intentando inicializar el mapa con Mapbox GL JS...");
 
         // TU API KEY DE MAPBOX AQUI
-        // ¡¡¡REEMPLAZA 'YOUR_MAPBOX_ACCESS_TOKEN' CON TU TOKEN REAL QUE OBTUVISTE DE MAPBOX!!!
         mapboxgl.accessToken = 'pk.eyJ1IjoiZWxlYW5lciIsImEiOiJjbWJncnoxeWwwMjFxMmpvbHY4MmlhODhqIn0.X0w5167XVX4-N--7mVayjg';
 
         // Coordenadas del centro del mapa (Managua, Nicaragua)
